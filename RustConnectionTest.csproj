@@ -7,4 +7,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="copy $(ProjectDir)rusttest\target\debug\rust_test.dll $(TargetDir)" />
+    </Target>
+
 </Project>
